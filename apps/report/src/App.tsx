@@ -8,6 +8,7 @@ import {
   GroupedActionDump,
   type ModelBrief,
   dedupeExecutionsKeepLatest,
+  getVersion,
   restoreImageReferences,
 } from '@midscene/core';
 import { antiEscapeScriptTag } from '@midscene/shared/utils';
@@ -100,6 +101,7 @@ function Visualizer(props: VisualizerProps): JSX.Element {
   const modelBriefText = modelBriefs
     .map((brief) => formatModelBrief(brief, modelBriefs.length > 1))
     .join(', ');
+  const resolvedSdkVersion = sdkVersion || getVersion();
   const reset = useExecutionDump((store) => store.reset);
   const [mainLayoutChangeFlag, setMainLayoutChangeFlag] = useState(0);
   const [sidebarWidth, setSidebarWidth] = useState(() => {
@@ -340,7 +342,7 @@ function Visualizer(props: VisualizerProps): JSX.Element {
           </div>
           <div className="page-nav-right">
             <div className="page-nav-version">
-              v{sdkVersion}
+              {resolvedSdkVersion ? `v${resolvedSdkVersion}` : 'unknown version'}
               {modelBriefText ? ` | ${modelBriefText}` : ''}
             </div>
             <div className="theme-divider" />
