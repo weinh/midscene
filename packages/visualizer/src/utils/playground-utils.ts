@@ -40,6 +40,9 @@ export const getPlaceholderForType = (type: string): string => {
   if (type === 'aiQuery') {
     return 'What do you want to query?';
   }
+  if (type === 'runYaml') {
+    return 'What do you want to run in YAML format?';
+  }
   if (type === 'aiAssert') {
     return 'What do you want to assert?';
   }

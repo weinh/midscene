@@ -272,6 +272,7 @@ export type ExecutionUxHint = 'countdown-before-run';
 // run type
 export type RunType =
   | 'aiAct'
+  | 'runYaml'
   | 'aiQuery'
   | 'aiAssert'
   | 'aiTap'

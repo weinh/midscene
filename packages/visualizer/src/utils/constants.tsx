@@ -46,7 +46,13 @@ export const apiMetadata = {
   aiWaitFor: { group: 'validation', title: 'Wait for a condition to be met' },
 };
 
-export const defaultMainButtons = ['aiAct', 'aiTap', 'aiQuery', 'aiAssert'];
+export const defaultMainButtons = [
+  'aiAct',
+  'aiTap',
+  'aiQuery',
+  'aiAssert',
+  'runYaml',
+];
 
 // welcome message template
 export const getWelcomeMessageTemplate = (
